@@ -15,7 +15,8 @@ function App() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const query = `Generate a creative and unique recipe using the following ingredients: ${ingredients}. The recipe should be innovative and not a traditional dish. Include interesting and unexpected flavor combinations and cooking techniques. The type of dish is ${type} and it should reflect the culinary style of the ${region} region.`;
+    const query = `Generate a creative and unique recipe using only the following ingredients: ${ingredients}. The recipe should be innovative and not a traditional dish, incorporating interesting and unexpected flavor combinations and cooking techniques. Ensure all combinations are safe for consumption. The type of dish is ${type} and it should reflect the culinary style of the ${region} region. Do not include any ingredients that are not listed.
+`;
 
     try {
       const response = await runChat(query);
